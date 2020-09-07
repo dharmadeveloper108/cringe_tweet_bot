@@ -27,12 +27,6 @@ const getRandomTweet = () => {
 }
 
 exports.sendRandomTweet = (req, res) => {
-    getRandomTweet()
-    .then(data => {
-        res.send(data);
-    }).catch(err => {
-        res.status(500).send({
-            errorMessage: err.message || "An error occurred while posting the tweet."
-        });
-    });
+    getRandomTweet();
+    res.status(200).send();
 }
